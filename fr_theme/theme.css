@@ -55,7 +55,7 @@ main aside.left {
   @apply -mt-4 mb-6 items-start md:mt-2 sm:mt-5 md:mb-0 md:w-1/4 mr-0 sm:mr-4 flex-shrink-0 text-blue-200;
 }
 
-main aside.left a, .home-link {
+main aside.left a, .home-link a {
   @apply text-blue-200;
 }
 
@@ -197,7 +197,11 @@ footer > .container {
 }
 
 footer .subscribe {
-  @apply my-10 md:my-8 md:mb-0 md:-mt-8 md:order-2;
+  @apply my-10 md:my-8 md:mb-0 md:-mt-8 md:order-2 text-blue-200 font-bold;
+}
+
+footer .subscribe a {
+  @apply text-blue-200 font-bold;
 }
 
 footer .social {
