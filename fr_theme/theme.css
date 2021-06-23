@@ -1,0 +1,257 @@
+body {
+  @apply bg-[#000e4a] dark:bg-[#000e4a];
+}
+
+.page,
+.home {
+  @apply flex flex-col w-full h-screen;
+}
+
+.page .container,
+.home .container {
+  max-width: 100%;
+}
+
+.page > .container {
+  @apply mx-auto pt-5 md:pt-10 px-10 max-w-7xl w-full flex-grow flex-shrink-0;
+}
+
+.home > .container {
+  @apply mx-auto pt-5 px-10 max-w-7xl w-full flex-grow flex-shrink-0;
+}
+
+main .changelog > section p > a[href]:not(.mark-color) {
+  @apply text-blue-400 underline;
+}
+
+.main .changelog > section mark a[href],
+.dark main .changelog > section mark a[href] {
+  color: unset;
+}
+
+header .title {
+  @apply text-white;
+}
+
+header .description {
+  @apply text-gray-100 text-xs sm:text-sm md:text-base pb-10 md:pb-0;
+}
+
+header .subscribe {
+  @apply text-blue-300 hidden md:block font-bold text-xl;
+}
+
+header .logo {
+  @apply -mt-12 md:mt-0;
+  display: none;
+}
+
+main {
+  @apply mt-5 md:mt-20 pt-5 md:pt-10 border-t;
+  border-color: #164076;
+}
+
+main aside.left {
+  @apply -mt-4 mb-6 items-start md:mt-2 sm:mt-5 md:mb-0 md:w-1/4 mr-0 sm:mr-4 flex-shrink-0 text-blue-200;
+}
+
+main aside.left a, .home-link {
+  @apply text-blue-200;
+}
+
+main aside.left .date {
+  @apply font-light text-blue-200;
+}
+
+main aside.left .highfive {
+  @apply hidden lg:flex text-blue-200;
+}
+
+main aside.left section {
+  @apply flex flex-row md:flex-col items-center md:items-start justify-between w-full md:space-y-4 mt-5 md:mt-0 text-blue-200;
+}
+
+main aside.bottom {
+  @apply flex lg:hidden flex-row items-center justify-between mb-10 text-blue-200;
+}
+
+.home main .latest {
+  @apply px-5 mx-auto;
+}
+
+.home main .recent {
+  @apply px-5 mx-auto mt-10 mb-24;
+}
+
+.home main .latest > h1,
+.home main .recent > h1 {
+  @apply text-2xl xl:text-3xl font-medium text-white mb-10;
+}
+
+main > .container {
+  @apply flex flex-col md:flex-row;
+}
+
+main > .container > section {
+  @apply min-w-0;
+}
+
+main .back {
+  @apply text-gray-500;
+}
+
+main .date {
+  @apply text-gray-400;
+}
+
+main .author {
+  @apply text-gray-400;
+}
+
+main .highfive {
+  @apply relative cursor-pointer flex items-center w-10 mt-8 select-none;
+}
+
+main .highfive .container {
+  @apply w-12 h-12 inline-flex items-center justify-center text-gray-300 transition-all;
+}
+
+main .highfive .container.animating {
+  @apply text-blue-500;
+}
+
+main .highfive .counter {
+  @apply ml-2 text-gray-500 opacity-100 transition-all select-none;
+}
+
+main .highfive .counter.animating {
+  @apply opacity-0;
+}
+
+main .highfive .counter-animation {
+  @apply opacity-0 -left-10 transition-all absolute bg-gray-700 rounded-full px-3 top-2 text-white text-sm py-1 select-none;
+}
+
+main .highfive .counter-animation.animating {
+  @apply opacity-100 left-12;
+}
+
+.page main .taglist {
+  @apply mt-6 sm:mt-10 flex items-start text-xs space-x-2 font-semibold;
+}
+
+.tiles .grid {
+  @apply -m-4 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 grid-flow-row;
+}
+
+.tile {
+  @apply h-full border-2 shadow-xl border-blue-900 rounded-lg overflow-hidden flex flex-col bg-white;
+}
+
+.tile > a > img {
+  @apply lg:h-48 md:h-36 w-full bg-gray-200 object-cover object-center border-b border-blue-900;
+}
+
+.tile .empty {
+  @apply lg:h-48 md:h-36 w-full bg-gradient-to-r from-fuchsia-500 via-red-600 to-orange-400 border-b border-gray-400;
+}
+
+.tile > .container {
+  @apply p-6 flex flex-col flex-1 bg-white;
+}
+
+.tile > .container > h1 {
+  @apply text-lg font-medium text-gray-900;
+}
+
+.tile > .container > .headline {
+  @apply leading-relaxed mb-3 text-gray-500;
+}
+
+.tile > .container section {
+  @apply mt-auto;
+}
+
+.tile > .container section .pageviews {
+  @apply text-gray-400 mr-3 inline-flex items-center ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200;
+}
+
+.tile > .container section .claps {
+  @apply text-gray-400 inline-flex items-center leading-none text-sm;
+}
+
+.tile > .container section .read {
+  @apply text-blue-500 inline-flex items-center md:mb-2 lg:mb-0;
+}
+
+section.bottom {
+  @apply block md:hidden mb-2 text-center;
+}
+
+footer {
+  @apply bg-black flex-shrink-0 pb-10;
+}
+
+footer > .container {
+  @apply max-w-7xl mx-auto py-1 md:py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8 leading-tight;
+}
+
+footer .subscribe {
+  @apply my-10 md:my-8 md:mb-0 md:-mt-8 md:order-2;
+}
+
+footer .social {
+  @apply flex justify-center space-x-6 md:-mt-8 md:order-3;
+}
+
+footer .legal {
+  @apply mt-4 md:mt-0 md:order-1;
+}
+
+footer .legal .links a:not(:first-child) {
+  @apply pl-2;
+}
+
+.covermedia .youtube {
+  @apply shadow-lg;
+}
+
+/* .covermedia .image {
+  @apply shadow-lg;
+} */
+
+.covermedia {
+  @apply rounded-xl relative;
+}
+
+.covermedia .image {
+  max-width: 650px;
+}
+
+.covermedia .image > img {
+  @apply object-cover object-center;
+}
+
+article.changelog {
+  min-height: 500px;
+}
+
+/* article.changelog section > h1.heading {
+  @apply mb-12;
+} */
+
+.ProseMirror * {
+  @apply leading-loose;
+}
+.ProseMirror p,
+.ProseMirror li {
+  @apply text-lg;
+}
+
+article.changelog div.iframe_node {
+  @apply my-8 p-3 border rounded border-black bg-[#0e1421];
+}
+
+article.changelog .hr > div > hr {
+  @apply !border-gray-800;
+}

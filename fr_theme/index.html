@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{include src="../../head.hbs"}}
+  </head>
+  <body class="dark">
+    <img class="absolute left-0 top-0 z-0 opacity-25" style="z-index: -1" src="https://fishrulesapp.com/images/contour-blue.png" alt="Fish Rules">
+    <div class="home">
+      <div
+        class="mt-10 mb-4 mx-auto flex items-center justify-center sm:justify-start"
+      >
+        <img class="w-64 cursor-pointer" src="https://fishrulesapp.com/images/logo-lg.png" alt="Fish Rules">
+      </div>
+
+      <ul class="mx-auto text-center text-2xl lg:text-sm xxl:text-xl lg:text-right lg:flex lg:items-center lg:space-x-10 lg:mt-10">
+        <li class="mt-10 mb-5 lg:m-0"><a
+            href="https://play.google.com/store/apps/details?id=com.fishrulesapp.fishrules2013&amp;pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img
+              class="w-full h-16 object-contain lg:w-40" alt="Get it on Google Play"
+              src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"></a></li>
+        <li class="mb-10 lg:m-0"><a href="https://apps.apple.com/us/app/fish-rules-2013/id597875361?ls=1"><img
+              class="w-full h-12 object-contain" alt="Get it on the App Store"
+              src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg"></a>
+        </li>
+        <li><a href="https://app.fishrulesapp.com"
+            class="text-blue-200 text-sm bg-blue-900 border border-solid border-blue-700 hover:bg-blue-700 hover:text-white font-bold uppercase px-8 py-3 rounded-full outline-none focus:outline-none"
+            style="transition:all .15s ease">Use the Web App</a></li>
+      </ul>
+
+      <div class="container">
+        <header>
+          {{include src="../../header.hbs"}}
+        </header>
+        <main class="changelogs-{{len changelogs}}">
+          {{#if (empty changelogs)}}
+          <div class="comingsoon">
+            {{include src="../../comingsoon.hbs" context=.}}
+          </div>
+          {{else}}
+          <div class="recent">
+            {{include src="../../tiles.hbs" changelogs=changelogs}}
+          </div>
+          {{/if}}
+        </main>
+      </div>
+      <footer>{{include src="../../footer.hbs"}}</footer>
+    </div>
+  </body>
+</html>
