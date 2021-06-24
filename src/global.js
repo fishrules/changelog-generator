@@ -110,17 +110,19 @@ function compactInteger(input, decimals = 0) {
 
   // wire up theme switch
   const mode = document.querySelector("button.mode");
-  mode.addEventListener("click", function () {
-    const html = document.documentElement;
-    const dark = html.classList.contains("dark");
-    if (dark) {
-      html.classList.remove("dark");
-      localStorage.theme = "light";
-    } else {
-      html.classList.add("dark");
-      localStorage.theme = "dark";
-    }
-  });
+  if (mode) {
+    mode.addEventListener("click", function () {
+      const html = document.documentElement;
+      const dark = html.classList.contains("dark");
+      if (dark) {
+        html.classList.remove("dark");
+        localStorage.theme = "light";
+      } else {
+        html.classList.add("dark");
+        localStorage.theme = "dark";
+      }
+    });
+  }
 
   // handle youtube player
   const buttons = document.querySelectorAll(".youtube .lty-playbtn");
@@ -166,7 +168,7 @@ function compactInteger(input, decimals = 0) {
     let ismaxed = false;
     highfives.forEach(function (highfive) {
       const counter = highfive.querySelector(".counter");
-      const container = highfive.querySelector(".container");
+      const image = highfive.querySelector(".image");
       const counterAnimation = highfive.querySelector(".counter-animation");
       highfive.addEventListener("click", function () {
         if (ismaxed) {
@@ -175,7 +177,7 @@ function compactInteger(input, decimals = 0) {
         clearTimeout(timer);
         currentCount++;
         counter.innerHTML = compactInteger(currentCount);
-        container.classList.add("animating");
+        image.classList.add("animating");
         counter.classList.add("animating");
         counterAnimation.classList.add("animating");
         counterAnimation.innerHTML = `+${deviceCount}`;
@@ -204,7 +206,7 @@ function compactInteger(input, decimals = 0) {
           })
           .finally(() => {
             timer = setTimeout(() => {
-              container.classList.remove("animating");
+              image.classList.remove("animating");
               counter.classList.remove("animating");
               counterAnimation.classList.remove("animating");
             }, 250);
