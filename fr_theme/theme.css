@@ -129,6 +129,10 @@ footer .legal .links {
   @apply mb-2 flex justify-center items-center md:justify-start flex-row divide-x divide-gray-700 space-x-2;
 }
 
+footer .legal .links:empty {
+  @apply mb-0;
+}
+
 footer .legal .copyright {
   @apply text-gray-500;
 }
@@ -242,7 +246,7 @@ footer .legal .powered-by a {
 
 
 main {
-  @apply mt-5 md:mt-20 pt-5 md:pt-10 border-t;
+  @apply mt-14 md:mt-20 pt-14 border-t;
   border-color: #164076;
 }
 
