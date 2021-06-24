@@ -29,7 +29,7 @@ main .changelog > section p > a[href]:not(.mark-color) {
   color: unset;
 }
 
-header .title {
+/* header .title {
   @apply text-white;
 }
 
@@ -40,18 +40,213 @@ header .description {
 header .subscribe {
   @apply text-blue-300 hidden md:block font-bold text-xl;
 }
-
+*/
 header .logo {
   @apply -mt-12 md:mt-0;
   display: none;
 }
+
+header {
+  @apply mt-4 mb-4 mx-auto flex items-center justify-center md:justify-start;
+}
+
+header aside {
+  @apply w-0 md:w-1/4 md:mr-4 flex-shrink-0;
+}
+
+header .content {
+  @apply flex-grow flex flex-col items-center md:items-start md:text-left;
+}
+
+header .logo img {
+  @apply w-12 h-12 rounded-full;
+}
+
+header .title {
+  @apply mt-4 text-4xl md:text-5xl font-extrabold text-white;
+}
+
+header .description {
+  @apply mt-2 md:mt-4 text-base text-gray-500 dark:text-gray-400;
+}
+
+header .subscribe {
+  @apply mt-4 text-center md:text-left text-blue-300;
+}
+
+header .subscribe a {
+  @apply inline-flex items-center hover:text-blue-500 transition-colors duration-300;
+}
+
+header .subscribe .icon {
+  @apply mr-2 text-lg leading-none;
+}
+
+
+
+footer {
+  @apply bg-gray-900 dark:bg-black text-gray-500 flex-shrink-0 text-sm;
+}
+
+footer a {
+  @apply hover:text-purple-100;
+}
+
+.home > footer > .container,
+.page > footer > .container {
+  @apply max-w-7xl mx-auto py-10 md:px-10 flex flex-col md:flex-row md:justify-between items-center md:items-start leading-tight;
+}
+
+footer .subscribe {
+  @apply mb-8 md:my-0 md:order-2;
+}
+
+footer .subscribe a {
+  @apply flex items-center text-blue-300;
+}
+
+footer .subscribe a .icon {
+  @apply mr-2;
+}
+
+footer .social {
+  @apply flex justify-center space-x-6 md:order-3;
+}
+
+footer .social .title {
+  @apply sr-only;
+}
+
+footer .social .icon {
+  @apply h-6 w-6;
+}
+
+footer .legal {
+  @apply flex flex-col items-center md:items-start mt-8 md:mt-0 md:order-1;
+}
+
+footer .legal .links {
+  @apply mb-2 flex justify-center items-center md:justify-start flex-row divide-x divide-gray-700 space-x-2;
+}
+
+footer .legal .copyright {
+  @apply text-gray-500;
+}
+
+footer .legal .links a:not(:first-child) {
+  @apply pl-2;
+}
+
+/* footer .legal .powered-by {
+  @apply ;
+} */
+
+footer .legal .powered-by a {
+  @apply text-sm mt-6 inline-flex items-center text-gray-500 hover:text-purple-100;
+}
+
+
+
+
+
+/**
+ * home page and tiles
+ */
+
+ .home main .latest {
+  @apply mx-auto flex flex-col md:flex-row;
+}
+
+.home main .recent {
+  @apply mx-auto mt-14 mb-14 flex flex-col md:flex-row;
+}
+
+.home main .latest > h1,
+.home main .recent > h1 {
+  @apply flex-shrink-0 mb-10 md:mb-0 w-auto md:w-1/4 mr-0 md:mr-4 text-2xl font-semibold text-gray-700 dark:text-white;
+}
+
+.tiles .grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-4 grid-flow-row;
+}
+
+.tile {
+  @apply h-full border border-blue-900 dark:border-gray-700 border-opacity-60 rounded-lg shadow overflow-hidden flex flex-col bg-white;
+}
+
+.tile > img {
+  @apply lg:h-48 md:h-36 w-full bg-gray-100 dark:bg-gray-200 object-cover object-center;
+}
+
+.tile .empty {
+  @apply lg:h-48 md:h-36 w-full bg-gradient-to-r from-fuchsia-500 via-red-600 to-orange-400;
+}
+
+.tile > .container {
+  @apply p-6 flex flex-col flex-1;
+}
+
+.tile > .container > h2 {
+  @apply text-lg font-semibold text-gray-900 transition-colors duration-300;
+}
+
+.tile:hover > .container > h2 {
+  @apply text-blue-500;
+}
+
+.tile > .container > .date {
+  @apply text-xs text-gray-400 mb-2;
+}
+
+.tile > .container > .taglist {
+  @apply mt-1 mb-4;
+}
+
+.tile > .container > .headline {
+  @apply leading-relaxed mb-3 dark:text-gray-300;
+}
+
+.tile > .container section {
+  @apply mt-4 flex items-center flex-wrap;
+}
+
+.tile > .container section svg {
+  @apply h-4 w-4;
+}
+
+.tile > .container section .read svg {
+  @apply ml-2;
+}
+
+.tile > .container section .pageviews {
+  @apply text-gray-400 mr-3 inline-flex items-center ml-auto leading-none text-sm pr-3 py-1;
+}
+
+.tile > .container section .pageviews svg {
+  @apply mr-1;
+}
+
+.tile > .container section .claps {
+  @apply text-gray-400 inline-flex items-center leading-none text-sm;
+}
+
+.tile > .container section .claps svg {
+  @apply h-6 w-6 mr-1;
+}
+
+.tile > .container section .read {
+  @apply text-blue-500 inline-flex items-center md:mb-2 lg:mb-0;
+}
+
+
+
 
 main {
   @apply mt-5 md:mt-20 pt-5 md:pt-10 border-t;
   border-color: #164076;
 }
 
-main aside.left {
+/* main aside.left {
   @apply -mt-4 mb-6 items-start md:mt-2 sm:mt-5 md:mb-0 md:w-1/4 mr-0 sm:mr-4 flex-shrink-0 text-blue-200;
 }
 
@@ -73,14 +268,100 @@ main aside.left section {
 
 main aside.bottom {
   @apply flex lg:hidden flex-row items-center justify-between mb-10 text-blue-200;
+} */
+
+
+/**
+ * article aside
+ */
+
+ main aside.left {
+  @apply mb-6 items-start md:mt-2 md:mb-0 md:w-1/4 sm:mr-4 flex-shrink-0;
 }
 
-.home main .latest {
-  @apply px-5 mx-auto;
+main aside.left .taglist {
+  @apply hidden md:flex;
 }
 
-.home main .recent {
-  @apply px-5 mx-auto mt-10 mb-24;
+main aside.left .highfive {
+  @apply hidden md:flex;
+}
+
+main aside.left section {
+  @apply flex flex-row md:flex-col justify-between items-center md:items-start w-full md:space-y-10;
+}
+
+main aside.bottom {
+  @apply mb-10 flex md:hidden justify-between items-center;
+}
+
+
+main > .container {
+  @apply flex flex-col md:flex-row;
+}
+
+main > .container > section {
+  @apply min-w-0;
+}
+
+main .back {
+  @apply mb-10 hidden md:block text-gray-500 dark:text-gray-500;
+}
+
+main .date {
+  @apply text-base font-semibold text-gray-500 dark:text-gray-400;
+}
+
+main .authors {
+  @apply order-1 md:order-2;
+}
+
+main .author {
+  @apply flex flex-row items-center text-gray-500 dark:text-gray-400;
+}
+
+main .author .avatar {
+  @apply mr-2;
+}
+
+main .author .name {
+  @apply whitespace-nowrap;
+}
+
+main .highfive {
+  @apply relative cursor-pointer flex items-center w-10 mt-8 select-none;
+}
+
+main .highfive .image {
+  @apply w-12 h-12 inline-flex items-center justify-center text-gray-300 transition-all;
+}
+
+main .highfive .image.animating {
+  @apply text-purple-500;
+}
+
+main .highfive .counter {
+  @apply ml-2 text-gray-500 opacity-100 transition-all select-none;
+}
+
+main .highfive .counter.animating {
+  @apply opacity-0;
+}
+
+main .highfive .counter-animation {
+  @apply opacity-0 -left-10 transition-all absolute bg-gray-700 rounded-full px-3 top-2 text-white text-sm py-1 select-none;
+}
+
+main .highfive .counter-animation.animating {
+  @apply opacity-100 left-12;
+}
+
+.taglist {
+  @apply mt-6 sm:mt-10 gap-x-2 gap-y-1 flex justify-start flex-grow-0 flex-wrap text-xs space-x-2 font-semibold;
+}
+
+section.bottom {
+  @apply block md:hidden mb-2 text-center;
 }
 
 .home main .latest > h1,
@@ -140,7 +421,7 @@ main .highfive .counter-animation.animating {
   @apply mt-6 sm:mt-10 flex items-start text-xs space-x-2 font-semibold;
 }
 
-.tiles .grid {
+/* .tiles .grid {
   @apply -m-4 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 grid-flow-row;
 }
 
@@ -182,13 +463,13 @@ main .highfive .counter-animation.animating {
 
 .tile > .container section .read {
   @apply text-blue-500 inline-flex items-center md:mb-2 lg:mb-0;
-}
+} */
 
 section.bottom {
   @apply block md:hidden mb-2 text-center;
 }
 
-footer {
+/* footer {
   @apply bg-black flex-shrink-0 pb-10;
 }
 
@@ -214,7 +495,7 @@ footer .legal {
 
 footer .legal .links a:not(:first-child) {
   @apply pl-2;
-}
+} */
 
 .covermedia .youtube {
   @apply shadow-lg;
@@ -225,7 +506,7 @@ footer .legal .links a:not(:first-child) {
 } */
 
 .covermedia {
-  @apply rounded-xl relative;
+  @apply mb-10 rounded-xl relative;
 }
 
 .covermedia .image {
