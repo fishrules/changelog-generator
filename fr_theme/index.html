@@ -29,22 +29,25 @@
       </ul>
 
       <div class="container">
-        <header>
-          {{include src="../../header.hbs"}}
-        </header>
+        {{include src="../../header.hbs"}}
         <main class="changelogs-{{len changelogs}}">
           {{#if (empty changelogs)}}
-          <div class="comingsoon">
+          <div class="coming-soon">
             {{include src="../../comingsoon.hbs" context=.}}
           </div>
           {{else}}
+          <div class="latest">
+            <h1>Latest</h1>
+            {{include src="../../tile.hbs" context=(first changelogs)}}
+          </div>
           <div class="recent">
-            {{include src="../../tiles.hbs" changelogs=changelogs}}
+            <h1>Recent</h1>
+            {{include src="../../tiles.hbs" changelogs=(after changelogs 1)}}
           </div>
           {{/if}}
         </main>
       </div>
-      <footer>{{include src="../../footer.hbs"}}</footer>
+      {{include src="../../footer.hbs"}}
     </div>
   </body>
 </html>
