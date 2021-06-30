@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {{include src="../../head.hbs"}}
+    {{include src="head.hbs"}}
   </head>
   <body>
     <img class="absolute left-0 top-0 z-0 opacity-25" style="z-index: -1" src="https://fishrulesapp.com/images/contour-blue.png" alt="Fish Rules">
@@ -29,25 +29,25 @@
       </ul>
 
       <div class="container">
-        {{include src="../../header.hbs"}}
+        {{include src="header.hbs"}}
         <main class="changelogs-{{len changelogs}}">
           {{#if (empty changelogs)}}
           <div class="coming-soon">
-            {{include src="../../comingsoon.hbs" context=.}}
+            {{include src="comingsoon.hbs" context=.}}
           </div>
           {{else}}
           <div class="latest">
             <h1>Latest</h1>
-            {{include src="../../tile.hbs" context=(first changelogs)}}
+            {{include src="tile.hbs" context=(first changelogs)}}
           </div>
           <div class="recent">
             <h1>Recent</h1>
-            {{include src="../../tiles.hbs" changelogs=(after changelogs 1)}}
+            {{include src="tiles.hbs" changelogs=(after changelogs 1)}}
           </div>
           {{/if}}
         </main>
       </div>
-      {{include src="../../footer.hbs"}}
+      {{include src="footer.hbs"}}
     </div>
   </body>
 </html>

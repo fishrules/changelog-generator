@@ -21,8 +21,7 @@ body {
 }
 
 main {
-  @apply mt-14 md:mt-20 pt-14 border-t;
-  border-color: #164076;
+  @apply mt-14 md:mt-20 pt-14 border-t border-[#164076] dark:border-[#164076];
 }
 
 
@@ -60,11 +59,11 @@ header .description {
 }
 
 header .subscribe {
-  @apply mt-4 text-center text-blue-300;
+  @apply mt-4 text-center text-blue-300 dark:text-blue-300;
 }
 
 header .subscribe a {
-  @apply inline-flex items-center hover:text-blue-500 transition-colors duration-300;
+  @apply inline-flex items-center hover:text-blue-500 dark:hover:text-blue-500 transition-colors duration-300;
 }
 
 header .subscribe .icon {
@@ -153,6 +152,9 @@ footer .legal .powered-by a {
 .home main .latest > h1,
 .home main .recent > h1 {
   @apply flex-shrink-0 mb-10 md:mb-0 w-auto md:w-1/4 mr-0 md:mr-4 text-2xl font-semibold text-gray-700;
+}
+.home .filters > h1 {
+  @apply text-white;
 }
 
 .tiles .grid {
@@ -430,4 +432,13 @@ main .changelog > section p > a[href]:not(.mark-color) {
 .main .changelog > section mark a[href],
 .dark main .changelog > section mark a[href] {
   color: unset;
+}
+
+
+.filters > .taglist {
+  @apply m-0;
+}
+
+.tag.clickable {
+  @apply cursor-pointer;
 }
